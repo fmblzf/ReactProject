@@ -39,3 +39,10 @@ buck-out/
 \.buckd/
 android/app/libs
 android/keystores/debug.keystore
+
+# App Config
+android/app/gradle.properties
+android/app/my-release-key.keystore
+android/gradle/wrapper/gradle-wrapper.properties
+
+
