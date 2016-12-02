@@ -14,6 +14,16 @@ import {
 import Scene from './component/scene';
 
 class ReactProject extends Component{
+  fetchData = () => {
+    return fetch('http://bbs.reactnative.cn/api/category/3')
+      .then((response) => response.json())
+      .then((responseJson) => {
+        console.log(responseJson)
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
   render(){
     return (
       <Navigator 
@@ -35,7 +45,10 @@ class ReactProject extends Component{
                 navigator.pop();
               }
             }}
+            //Funtion to fetch data
+            onFetch={this.fetchData}
           />
+          
         }
       />      
     );

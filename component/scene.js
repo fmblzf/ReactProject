@@ -1,11 +1,12 @@
 import React,{Component,PropTypes} from 'react';
-import {View,Text,TouchableHighlight} from 'react-native';
+import {View,Text,TouchableHighlight,Button,StyleSheet,} from 'react-native';
 
 export default class Scene extends Component{
 	static propTypes = {
 		title:PropTypes.string.isRequired,
 		onForward:PropTypes.func.isRequired,
 		onBack:PropTypes.func.isRequired,
+		onFetch:PropTypes.func.isRequired,
 	};
 
 	render(){
@@ -18,6 +19,7 @@ export default class Scene extends Component{
 				<TouchableHighlight onPress={this.props.onBack} >
 				<Text>点我回到上一个场景</Text>
 				</TouchableHighlight>
+				<Button onPress={this.props.onFetch} color='#841584' style={{padding:10,fontSize:42}} title="提交获取数据"/>
 			</View>
 		);
 	}
