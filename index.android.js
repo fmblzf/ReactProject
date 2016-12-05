@@ -17,6 +17,7 @@ import {
 
 import Scene from './component/scene';
 import Playground from './component/animate'; 
+import ToggleAnimatingActivityIndicator from './component/ActivityIndicator_SELF';
 
 class ReactProject extends Component {
   constructor(props) {
@@ -76,7 +77,7 @@ class ReactProject extends Component {
               <Text>text one</Text>
               <Text>text two</Text>
             </View>
-
+            <ToggleAnimatingActivityIndicator />
             <Playground />
         </View>
       }
