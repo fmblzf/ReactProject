@@ -3,25 +3,8 @@
  * https://github.com/facebook/react-native
  * @flow
  */
+import {AppRegistry,} from 'react-native';
 
-import React, {
-  Component
-} from 'react';
-import {
-  AppRegistry,
-} from 'react-native';
+import Mian from './widget/main';
 
-
-import NavigatorNew from './component/navigator.js';
-import DrawLayoutAndroid from './component/drawLayoutAndroid.js';
-
-class ReactProject extends Component {
- 
-  render() {
-    return (    
-    	<DrawLayoutAndroid />
-    );
-  }
-}
-
-AppRegistry.registerComponent('ReactProject', () => ReactProject);
+AppRegistry.registerComponent('ReactProject', () => Mian);
