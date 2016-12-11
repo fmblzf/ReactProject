@@ -12,12 +12,12 @@ import {
   View,
 } from 'react-native'; 
 
+import Header from './component/header';
+
 class Main extends Component {
   render(){
     return (
-      <View>
-        <Text>程序入口</Text>
-      </View>
+      <Header />
     );
   }
 }
