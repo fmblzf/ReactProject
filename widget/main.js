@@ -8,8 +8,7 @@ import React, {
   Component
 } from 'react';
 import {
-  Text,
-  View,
+  Alert,
 } from 'react-native'; 
 
 import Header from './component/header';
@@ -17,7 +16,12 @@ import Header from './component/header';
 class Main extends Component {
   render(){
     return (
-      <Header />
+      <Header title='Main' isBackHeader={true} onBackAction={()=>{
+      	Alert.alert(
+      		'测试',
+      		'测试信息',
+      	)
+      }}/>
     );
   }
 }
