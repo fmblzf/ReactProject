@@ -8,17 +8,24 @@ import React, {
   Component
 } from 'react';
 import {
-  Alert,
+  View,
+  Navigator,
 } from 'react-native'; 
 
 import Header from './component/header';
+import NavigatorComponent from './component/navigator';
+
+import HomeFramePage from './page/HomeFramePage';
 
 class Main extends Component {
   render(){
     return (
-      <Header title='Main'/>
+    	<View style={{flex:1}}>
+	      <Header />
+	      <NavigatorComponent initialRoute={{name:'HomeFramePage',component:HomeFramePage}} />
+	    </View>
     );
   }
 }
-
+//导出模块使用
 export default Main;
