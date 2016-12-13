@@ -6,7 +6,14 @@
 
 import React,{Component,PropTypes} from 'react';
 
-import {ToolbarAndroid,StyleSheet,View,StatusBar,Image,Text,Alert,TouchableOpacity} from 'react-native';
+import {
+	StyleSheet,
+	View,
+	StatusBar,
+	Image,
+	Text,
+	TouchableOpacity
+} from 'react-native';
 
 /**
  * 标题栏组件
@@ -17,44 +24,24 @@ class Header extends Component{
 	 * @type {Object}
 	 */
 	static propTypes = {
-		title:PropTypes.string,		
-		onLeftAction:PropTypes.func,
-		onRightAction:PropTypes.func,
-		onBackAction:PropTypes.func,
+		title:PropTypes.string,		//标题文字
+		onLeftAction:PropTypes.func,//左边图标的点击事件
+		onRightAction:PropTypes.func,//右边图标的点击事件
+		onBackAction:PropTypes.func,//返回事件
 		isBackHeader:PropTypes.bool,//是否是返回标题栏
 	}
 
-	constructor(props){
-		super(props);
-		this.state = {
-			hidden:false,
-		}
-	}
-
-	componentDidMount = ()=>{
-		this.setState({
-			hidden:false,
-		});
-	}	
-
-	_render(){
-		return (
-			<View>
-				<StatusBar
-				    hidden={this.state.hidden} />
-				<ToolbarAndroid
-					logo={require('../img/icon_menu_left_black.png')}
-					title="ReactProject"
-					actions={[{title:'Setting',icon:require('../img/icon_more_black.png'),show:'always'}]}
-					onActionSelected={this.onActionSelected} 
-					style={styles.toolbar} />
-			</View>
-		);
-	}
-
+	/**
+	 * 渲染组件
+	 * @return {[type]} [description]
+	 */
 	render(){
 		return (
 			<View style={styles.toolbar}>
+				<StatusBar 
+					translucent={false}
+					backgroundColor='#999'
+				 />	
 				<View style={{flex:1,alignItems:'flex-start',}}>
 					<TouchableOpacity
 						activeOpacity={0.2}
@@ -78,19 +65,9 @@ class Header extends Component{
 							source={require('../img/icon_more_black.png')} 
 						/>
 					</TouchableOpacity>)} 
-				</View>
+				</View>							
 			</View>
 		);
-	}
-	
-	/**
-	 * 
-	 * @param  {[type]} position [description]
-	 * @return {[type]}          [description]
-	 */
-	onActionSelected(position){
-		if (position === 0) {
-		}
 	}
 }
 /**
@@ -99,7 +76,7 @@ class Header extends Component{
  */
 var styles = StyleSheet.create({
   toolbar: {
-    backgroundColor: '#e9eaed',
+    backgroundColor: '#999',
     height: 56,//标题栏不设置高度，是不显示的
     flexDirection:'row',
     alignItems:'center',

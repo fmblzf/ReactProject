@@ -16,12 +16,7 @@ import Header from './component/header';
 class Main extends Component {
   render(){
     return (
-      <Header title='Main' isBackHeader={true} onBackAction={()=>{
-      	Alert.alert(
-      		'测试',
-      		'测试信息',
-      	)
-      }}/>
+      <Header title='Main'/>
     );
   }
 }
