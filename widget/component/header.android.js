@@ -40,7 +40,7 @@ class Header extends Component{
 			<View style={styles.toolbar}>
 				<StatusBar 
 					translucent={false}
-					backgroundColor='#999'
+					backgroundColor='#2578FB'
 				 />	
 				<View style={{flex:1,alignItems:'flex-start',}}>
 					<TouchableOpacity
@@ -76,7 +76,7 @@ class Header extends Component{
  */
 var styles = StyleSheet.create({
   toolbar: {
-    backgroundColor: '#999',
+    backgroundColor: '#2578FB',
     height: 56,//标题栏不设置高度，是不显示的
     flexDirection:'row',
     alignItems:'center',

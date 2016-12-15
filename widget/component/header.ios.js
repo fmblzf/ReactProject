@@ -63,7 +63,7 @@ class Header extends Component{
  */
 var styles = StyleSheet.create({
   toolbar: {
-    backgroundColor: '#e9eaed',
+    backgroundColor: '#2578FB',
     height: 76,//标题栏不设置高度，是不显示的
     flexDirection:'row',
     alignItems:'center',

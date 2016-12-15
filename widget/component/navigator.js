@@ -34,7 +34,6 @@ class NavigatorComponent extends Component{
 	 * @return       场景切换的动画组件
 	 */
 	configureScene(route,routeStack){
-		console.log('configureScene');
 		if (route.type == 'Bottom') {
 			//地步弹出
 			return Navigator.SceneConfigs.FloatFromBottom;
@@ -50,7 +49,6 @@ class NavigatorComponent extends Component{
 	 * @return           渲染场景的组件
 	 */
 	renderScene(route,navigator){
-		console.log('renderScene');
 		//{...route.params} 语法含义是，将params中的每一个key作为props传递到下一个界面
 		//navigator   将Navigator对象作为props传递到renderScene渲染组件中
 		let Component = route.component;

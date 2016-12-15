@@ -15,6 +15,7 @@ import {
 import FuncFramePage from './FuncFramePage';
 //request,必须用{}扩起来
 import {request} from '../utils/RequestUtils';
+import Storage from '../utils/StorageUtils';
 
 /**
  * 首页组件
@@ -26,29 +27,72 @@ class HomeFramePage extends Component{
 	 */
 	render(){
 		return (
-			<View style={{flex:1}}>
+			<View style={{flex:1,alignItems:'center',justifyContent:'center',backgroundColor:'#fff'}}>
 				<Text>
 					首页
 				</Text>
 				<TouchableOpacity 
 					activeOpacity={0.2}
-					onPress={this._onPressEvent.bind(this)}>
+					onPress={this._onPressEvent.bind(this)}
+					style={{
+						backgroundColor:'#7BDBF7',
+						width:100,
+						height:40,
+						justifyContent:'center',
+						alignItems:'center',
+						marginTop:20,
+						borderRadius:20,
+					}}>
 					<Text>下一页</Text>
 				</TouchableOpacity>
 
 				<TouchableHighlight
 					onPress={this.fetchData}
-					underlayColor='blue'
+					delayLongPress={null}
+					underlayColor='#CEF0FA'
 					style={{
-						backgroundColor:'#999',
+						backgroundColor:'#7BDBF7',
 						width:100,
 						height:40,
-
+						justifyContent:'center',
+						alignItems:'center',
+						marginTop:20,
+						borderRadius:20,
 					}} >
-					<Text>获取数据</Text>
+					<View>
+						<Text style={{
+							color:'#fff',
+						}}>获取数据</Text>
+					</View>
+				</TouchableHighlight>
+
+				<TouchableHighlight
+					onPress={this.cacheData}
+					underlayColor='#CEF0FA'
+					style={{
+						backgroundColor:'#7BDBF7',
+						width:100,
+						height:40,
+						justifyContent:'center',
+						alignItems:'center',
+						marginTop:20,
+						borderRadius:20,
+					}} >
+					<Text>缓存数据</Text>
 				</TouchableHighlight>
 			</View>
 		);
+	}
+	/**
+	 * 缓存数据
+	 * @return {[type]} [description]
+	 */
+	cacheData = ()=>{
+		Storage.setItem('userid','23456');
+		Storage.getItem('userid')
+		.then((value)=>{
+			alert(value);
+		});
 	}
 	/**
 	 * 获取数据

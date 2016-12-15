@@ -7,6 +7,6 @@
  * 全局域名
  * @type {String}
  */
-//export const HOST = "https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json";
-export const HOST = 'http://apis.baidu.com/';
+export const HOST = "https://raw.githubusercontent.com/facebook/react-native/master/docs/MoviesExample.json";
+//export const HOST = 'http://apis.baidu.com/';
 

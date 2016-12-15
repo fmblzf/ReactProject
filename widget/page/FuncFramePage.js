@@ -21,13 +21,22 @@ class FuncFramePage extends Component{
 	 */
 	render(){
 		return (
-			<View style={{flex:1}}>
+			<View style={{flex:1,alignItems:'center',justifyContent:'center',backgroundColor:'#fff'}}>
 				<Text>
 					功能页
 				</Text>
 				<TouchableOpacity 
 					activeOpacity={0.2}
 					onPress={this._onBackEvent.bind(this)}
+					style={{
+						backgroundColor:'#7BDBF7',
+						width:100,
+						height:40,
+						justifyContent:'center',
+						alignItems:'center',
+						marginTop:20,
+						borderRadius:20,
+					}}
 				>
 					<Text>上一页</Text>
 				</TouchableOpacity>
