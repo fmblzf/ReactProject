@@ -16,6 +16,7 @@ import FuncFramePage from './FuncFramePage';
 //request,必须用{}扩起来
 import {request} from '../utils/RequestUtils';
 import Storage from '../utils/StorageUtils';
+import Sqlite from '../utils/SqliteUtils';
 
 /**
  * 首页组件
@@ -80,8 +81,38 @@ class HomeFramePage extends Component{
 					}} >
 					<Text>缓存数据</Text>
 				</TouchableHighlight>
+
+				<TouchableHighlight
+					onPress={this.operaDb}
+					underlayColor='#CEF0FA'
+					style={{
+						backgroundColor:'#7BDBF7',
+						width:100,
+						height:40,
+						justifyContent:'center',
+						alignItems:'center',
+						marginTop:20,
+						borderRadius:20,
+					}} >
+					<Text>数据库操作</Text>
+				</TouchableHighlight>
 			</View>
 		);
+	}
+	/**
+	 * 操作数据库
+	 * @return {[type]} [description]
+	 */
+	operaDb = ()=>{
+		var sql = 'create table test(id number,name vachar(50));';
+		var params = []; 
+		Sqlite.execute('db.sqlite',sql,params)
+		.then((data)=>{
+			console.log(data);
+		})
+		.catch((error)=>{
+			//console.log(error);
+		})
 	}
 	/**
 	 * 缓存数据
