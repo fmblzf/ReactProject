@@ -104,15 +104,17 @@ class HomeFramePage extends Component{
 	 * @return {[type]} [description]
 	 */
 	operaDb = ()=>{
-		var sql = 'create table test(id number,name vachar(50));';
-		var params = []; 
-		Sqlite.execute('db.sqlite',sql,params)
+		var sql = 'select * from cy_com_district where id<? ;';
+		var params = [8]; 
+		Sqlite.executeSql(sql,params)
 		.then((data)=>{
-			console.log(data);
+			var result = Sqlite.convertJson(data);
+			console.log(JSON.stringify(result));
 		})
 		.catch((error)=>{
-			//console.log(error);
+			console.log(error);
 		})
+		
 	}
 	/**
 	 * 缓存数据

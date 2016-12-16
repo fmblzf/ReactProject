@@ -25,4 +25,35 @@ export const request = (url='',body='',method='POST')=>{
 		});
 	});
 }
+/**
+ * 文件上传
+ * url 接口路径
+ * uri 文件路径
+ * filename 文件名称
+ */
+export const upload = (url,uri,filename)=>{
+	let formData = new FormData();
+	let file = {uri:uri,type:'multipart/form-data',name:filename};
+	formData.append('images',file);
+	return new Promise((resolve,reject)=>{
+		fetch(url,{
+			method:'POST',
+			header:{
+				'Content-Type':'multipart/form-data',
+			},
+			body:formData,
+		})
+		.then((response)=>{
+			return response.text();
+		})
+		.then((responeData)=>{
+			console.log(responeData);
+			resolve(responeData)
+		})
+		.catch((error)=>{
+			console.warn('File upload Failed ',error);
+			reject(error)
+		});
+	});
+}
 
