@@ -110,9 +110,11 @@ class HomeFramePage extends Component{
 		.then((data)=>{
 			var result = Sqlite.convertJson(data);
 			console.log(JSON.stringify(result));
+			alert(JSON.stringify(result));
 		})
 		.catch((error)=>{
 			console.log(error);
+			alert(error.message);
 		})
 		
 	}
@@ -134,6 +136,7 @@ class HomeFramePage extends Component{
 	fetchData = ()=>{
 		request().then((responseJson)=>{
 			console.log(JSON.stringify(responseJson));
+			alert(responseJson.total);
 		})
 	}
 	/**

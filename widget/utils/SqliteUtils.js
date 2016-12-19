@@ -16,7 +16,7 @@ var _db;
  */
 _openDb = () => {
     var promise = new Promise((resolve, reject) => {
-        SQLite.openDatabase({ name: db_name, createFromLocation: "~city.db", location: 'Library' })
+        SQLite.openDatabase({ name: db_name, createFromLocation: 1, location: 'Library' })
             .then((db) => {
                 _db = db;
                 resolve(db);
