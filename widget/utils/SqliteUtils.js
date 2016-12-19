@@ -3,6 +3,7 @@
  * 本地数据库操作类
  * 
  */
+var platform = require('Platform');
 var SQLite = require('react-native-sqlite-storage');
 // SQLite.DEBUG(true);
 SQLite.enablePromise(true);
@@ -16,7 +17,11 @@ var _db;
  */
 _openDb = () => {
     var promise = new Promise((resolve, reject) => {
-        SQLite.openDatabase({ name: db_name, createFromLocation: 1, location: 'Library' })
+        var createFromLocation = '~' + db_name;
+        if (platform.OS == 'ios') {
+            createFromLocation = 1;
+        }
+        SQLite.openDatabase({ name: db_name, createFromLocation: createFromLocation, location: 'Library' })
             .then((db) => {
                 _db = db;
                 resolve(db);
