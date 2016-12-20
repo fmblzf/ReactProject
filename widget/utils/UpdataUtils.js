@@ -8,6 +8,12 @@
  * 当app本本号不一致，android直接下载服务端的apk安装；IOS直接跳转到appstore进行更新操作
  */
 
+/**
+ * 版本更新类集合
+ */
+class UpVersion {
+    constructor(options) {};
+};
 
 __downloadBundle = () => {};
 __downloadApk = () => {};
@@ -16,13 +22,7 @@ __installApk = () => {};
 __jumpAppStore = () => {};
 _checkVersion = () => {};
 _updataVersion = () => {};
-/**
- * 版本更新类集合
- */
-var UpVersion = {
-    checkVersion: _checkVersion,
-    updataVersion: _updataVersion,
-};
+
 /**
  * 导出可调用的模块
  */

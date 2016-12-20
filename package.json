@@ -12,7 +12,6 @@
         "@remobile/react-native-zip": "^1.0.3",
         "react": "~15.3.1",
         "react-native": "0.37.0",
-        "react-native-file-transfer": "0.0.3",
         "react-native-fs": "^2.0.1-rc.2",
         "react-native-sqlite-storage": "^3.1.2",
         "react-timer-mixin": "^0.13.3",
