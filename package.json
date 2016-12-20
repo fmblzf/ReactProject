@@ -1,27 +1,31 @@
 {
-  "name": "ReactProject",
-  "version": "0.0.1",
-  "private": true,
-  "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
-    "test": "jest"
-  },
-  "dependencies": {
-    "react": "~15.3.1",
-    "react-native": "0.37.0",
-    "react-native-file-transfer": "0.0.3",
-    "react-native-sqlite-storage": "^3.1.2",
-    "react-timer-mixin": "^0.13.3",
-    "whatwg-fetch": "^2.0.0"
-  },
-  "devDependencies": {
-    "babel-jest": "17.0.2",
-    "babel-preset-react-native": "1.9.0",
-    "jest": "17.0.3",
-    "jest-react-native": "17.0.3",
-    "react-test-renderer": "~15.3.1"
-  },
-  "jest": {
-    "preset": "jest-react-native"
-  }
+    "name": "ReactProject",
+    "version": "0.0.1",
+    "private": true,
+    "scripts": {
+        "start": "node node_modules/react-native/local-cli/cli.js start",
+        "test": "jest"
+    },
+    "dependencies": {
+        "@remobile/react-native-cordova": "^1.1.0",
+        "@remobile/react-native-file-transfer": "^1.0.6",
+        "@remobile/react-native-zip": "^1.0.3",
+        "react": "~15.3.1",
+        "react-native": "0.37.0",
+        "react-native-file-transfer": "0.0.3",
+        "react-native-fs": "^2.0.1-rc.2",
+        "react-native-sqlite-storage": "^3.1.2",
+        "react-timer-mixin": "^0.13.3",
+        "whatwg-fetch": "^2.0.0"
+    },
+    "devDependencies": {
+        "babel-jest": "17.0.2",
+        "babel-preset-react-native": "1.9.0",
+        "jest": "17.0.3",
+        "jest-react-native": "17.0.3",
+        "react-test-renderer": "~15.3.1"
+    },
+    "jest": {
+        "preset": "jest-react-native"
+    }
 }

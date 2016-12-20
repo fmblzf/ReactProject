@@ -27,6 +27,10 @@
 		E717BF1F1E03FB0300B76A46 /* www in Resources */ = {isa = PBXBuildFile; fileRef = E717BF1E1E03FB0300B76A46 /* www */; settings = {ASSET_TAGS = (); }; };
 		E79FDD241DF5747B003AFC08 /* assets in Resources */ = {isa = PBXBuildFile; fileRef = E79FDD231DF5747B003AFC08 /* assets */; settings = {ASSET_TAGS = (); }; };
 		E79FDD451DF57487003AFC08 /* index.ios.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = E79FDD441DF57487003AFC08 /* index.ios.jsbundle */; settings = {ASSET_TAGS = (); }; };
+		218CD0BF15924A3BACBC2666 /* libRCTCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 172AFEB3DA4B4FFBB7E57133 /* libRCTCordova.a */; };
+		B8A551857FD940E39973F426 /* libRCTFileTransfer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2BF154C2BB48D596F74991 /* libRCTFileTransfer.a */; };
+		4F322B3DCE2042DBA1C8816E /* libRCTZip.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2A0B50AEDB0B499B9BA1CB83 /* libRCTZip.a */; };
+		AE4D71B806854D13959F3B50 /* libRNFS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 64CC6BDA1F854D0C8C2D8773 /* libRNFS.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -193,6 +197,14 @@
 		E717BF1E1E03FB0300B76A46 /* www */ = {isa = PBXFileReference; lastKnownFileType = folder; name = www; path = ../www; sourceTree = "<group>"; };
 		E79FDD231DF5747B003AFC08 /* assets */ = {isa = PBXFileReference; lastKnownFileType = folder; name = assets; path = bundle/assets; sourceTree = "<group>"; };
 		E79FDD441DF57487003AFC08 /* index.ios.jsbundle */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = index.ios.jsbundle; path = bundle/index.ios.jsbundle; sourceTree = "<group>"; };
+		142B34C6E183432DB3D1A7A6 /* RCTCordova.xcodeproj */ = {isa = PBXFileReference; name = "RCTCordova.xcodeproj"; path = "../node_modules/@remobile/react-native-cordova/ios/RCTCordova.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		172AFEB3DA4B4FFBB7E57133 /* libRCTCordova.a */ = {isa = PBXFileReference; name = "libRCTCordova.a"; path = "libRCTCordova.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		BF489D95D94A467E95BA7F54 /* RCTFileTransfer.xcodeproj */ = {isa = PBXFileReference; name = "RCTFileTransfer.xcodeproj"; path = "../node_modules/@remobile/react-native-file-transfer/ios/RCTFileTransfer.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		0E2BF154C2BB48D596F74991 /* libRCTFileTransfer.a */ = {isa = PBXFileReference; name = "libRCTFileTransfer.a"; path = "libRCTFileTransfer.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		8E99960A6B4F450494AFC505 /* RCTZip.xcodeproj */ = {isa = PBXFileReference; name = "RCTZip.xcodeproj"; path = "../node_modules/@remobile/react-native-zip/ios/RCTZip.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		2A0B50AEDB0B499B9BA1CB83 /* libRCTZip.a */ = {isa = PBXFileReference; name = "libRCTZip.a"; path = "libRCTZip.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		C4997BF2DEE145D387923C91 /* RNFS.xcodeproj */ = {isa = PBXFileReference; name = "RNFS.xcodeproj"; path = "../node_modules/react-native-fs/RNFS.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		64CC6BDA1F854D0C8C2D8773 /* libRNFS.a */ = {isa = PBXFileReference; name = "libRNFS.a"; path = "libRNFS.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +232,10 @@
 				00C302EA1ABCBA2D00DB3ED1 /* libRCTVibration.a in Frameworks */,
 				139FDEF61B0652A700C62182 /* libRCTWebSocket.a in Frameworks */,
 				2F7F7277778D43FE958A5669 /* libSQLite.a in Frameworks */,
+				218CD0BF15924A3BACBC2666 /* libRCTCordova.a in Frameworks */,
+				B8A551857FD940E39973F426 /* libRCTFileTransfer.a in Frameworks */,
+				4F322B3DCE2042DBA1C8816E /* libRCTZip.a in Frameworks */,
+				AE4D71B806854D13959F3B50 /* libRNFS.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -352,6 +368,10 @@
 				832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */,
 				00C302DF1ABCB9EE00DB3ED1 /* RCTVibration.xcodeproj */,
 				139FDEE61B06529A00C62182 /* RCTWebSocket.xcodeproj */,
+				142B34C6E183432DB3D1A7A6 /* RCTCordova.xcodeproj */,
+				BF489D95D94A467E95BA7F54 /* RCTFileTransfer.xcodeproj */,
+				8E99960A6B4F450494AFC505 /* RCTZip.xcodeproj */,
+				C4997BF2DEE145D387923C91 /* RNFS.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -746,6 +766,10 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ReactProject.app/ReactProject";
@@ -762,6 +786,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -780,6 +808,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..\node_modules\neact-native-sqlite-storagesrcios",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-cordova\ios\RCTCordova",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-file-transfer\ios\RCTFileTransfer",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-zip\ios\RCTZip/**",
+					"$(SRCROOT)\..\node_modules\react-native-fs/**",
 				);
 				INFOPLIST_FILE = ReactProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -803,6 +835,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..\node_modules\neact-native-sqlite-storagesrcios",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-cordova\ios\RCTCordova",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-file-transfer\ios\RCTFileTransfer",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-zip\ios\RCTZip/**",
+					"$(SRCROOT)\..\node_modules\react-native-fs/**",
 				);
 				INFOPLIST_FILE = ReactProject/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -855,6 +891,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..\node_modules\neact-native-sqlite-storagesrcios",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-cordova\ios\RCTCordova",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-file-transfer\ios\RCTFileTransfer",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-zip\ios\RCTZip/**",
+					"$(SRCROOT)\..\node_modules\react-native-fs/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -896,6 +936,10 @@
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../node_modules/react-native/React/**",
 					"$(SRCROOT)..\node_modules\neact-native-sqlite-storagesrcios",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-cordova\ios\RCTCordova",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-file-transfer\ios\RCTFileTransfer",
+					"$(SRCROOT)\..\node_modules\@remobile\react-native-zip\ios\RCTZip/**",
+					"$(SRCROOT)\..\node_modules\react-native-fs/**",
 				);
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;

@@ -1,4 +1,7 @@
 rootProject.name = 'ReactProject'
 
-include ':app',':react-native-sqlite-storage'
+include ':app',':react-native-sqlite-storage',':react-native-fs',':react-native-zip',':react-native-file-transfer'
 project(':react-native-sqlite-storage').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-sqlite-storage/src/android')
+project(':react-native-fs').projectDir = new File(rootProject.projectDir, '../node_modules/react-native-fs/src/android')
+project(':react-native-zip').projectDir = new File(rootProject.projectDir, '../node_modules/@remobile/react-native-zip/android')
+project(':react-native-file-transfer').projectDir = new File(rootProject.projectDir, '../node_modules/@remobile/react-native-file-transfer/android')

@@ -5,7 +5,15 @@
  * 和本地的app版本进行比较：
  *  当app版本号一致，并且服务器端的bundle版本号大于当前的本地bundle版本号时，开始版本更新
  *  更新方式，可以进行配置（1）强制更新；（2）静默更新（3）提示更新
+ * 当app本本号不一致，android直接下载服务端的apk安装；IOS直接跳转到appstore进行更新操作
  */
+
+
+__downloadBundle = () => {};
+__downloadApk = () => {};
+__resetJsBundle = () => {};
+__installApk = () => {};
+__jumpAppStore = () => {};
 _checkVersion = () => {};
 _updataVersion = () => {};
 /**
