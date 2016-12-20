@@ -29,6 +29,9 @@ project.xcworkspace
 .gradle
 local.properties
 
+#Java
+javac-services.*
+
 # node.js
 #
 node_modules/
