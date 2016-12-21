@@ -31,6 +31,7 @@ local.properties
 
 #Java
 javac-services.*
+*.class
 
 # node.js
 #
