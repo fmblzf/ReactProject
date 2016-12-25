@@ -17,6 +17,7 @@ import FuncFramePage from './FuncFramePage';
 import {request} from '../utils/RequestUtils';
 import Storage from '../utils/StorageUtils';
 import Sqlite from '../utils/SqliteUtils';
+var ToastPlugin = require('react-native-cjzf-toast');
 
 /**
  * 首页组件
@@ -96,8 +97,25 @@ class HomeFramePage extends Component{
 					}} >
 					<Text>数据库操作</Text>
 				</TouchableHighlight>
+				<TouchableHighlight
+					onPress={this.handlerPlugin}
+					underlayColor='#CEF0FA'
+					style={{
+						backgroundColor:'#7BDBF7',
+						width:100,
+						height:40,
+						justifyContent:'center',
+						alignItems:'center',
+						marginTop:20,
+						borderRadius:20,
+					}} >
+					<Text>调用自定义插件</Text>
+				</TouchableHighlight>				
 			</View>
 		);
+	}
+	handlerPlugin = ()=>{ 
+		ToastPlugin.show({message:'测试'});
 	}
 	/**
 	 * 操作数据库

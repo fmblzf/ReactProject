@@ -6,6 +6,8 @@ import com.facebook.react.ReactApplication;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
+import com.fmblzf.toastplugin.ToastPlugin;
+import com.fmblzf.toastplugin.ToastPluginPackage;
 
 import org.pgsqlite.SQLitePluginPackage;
 
@@ -27,6 +29,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new SQLitePluginPackage(),//注册Sqlite插件
+          new ToastPluginPackage(),
           new MainReactPackage()
       );
     }
