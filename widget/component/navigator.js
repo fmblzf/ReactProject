@@ -6,8 +6,6 @@ import {
 	Navigator,
 } from 'react-native';
 
-import HomeFramePage from '../page/HomeFramePage';
-
 /**
  * 导航栏组件
  */
