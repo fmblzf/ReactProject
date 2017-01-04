@@ -14,9 +14,9 @@ import {
 
 import FuncFramePage from './FuncFramePage';
 //request,必须用{}扩起来
-import {request} from '../utils/RequestUtils';
-import Storage from '../utils/StorageUtils';
-import Sqlite from '../utils/SqliteUtils';
+import {request} from '../../../utils/RequestUtils';
+import Storage from '../../../utils/StorageUtils';
+import Sqlite from '../../../utils/SqliteUtils';
 var ToastPlugin = require('react-native-cjzf-toast');
 
 /**

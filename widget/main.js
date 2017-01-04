@@ -7,23 +7,21 @@
 import React, {
   Component
 } from 'react';
-import {
-  View,
-  Navigator,
-} from 'react-native'; 
-
-import Header from './component/header';
-import NavigatorComponent from './component/navigator';
-
-import HomeFramePage from './page/HomeFramePage';
+/**
+ *
+ * 备注：
+ * 在文件夹apps下创建不同的app项目，
+ * 只需要在该处调用不同的组件就可以，
+ * 并且将调用组件的名称替换即可。
+ *
+ *
+ */
+import Example from './apps/examples/main';
 
 class Main extends Component {
   render(){
     return (
-    	<View style={{flex:1}}>
-	      <Header />
-	      <NavigatorComponent initialRoute={{name:'HomeFramePage',component:HomeFramePage}} />
-	    </View>
+        <Example />
     );
   }
 }
