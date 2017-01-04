@@ -16,12 +16,12 @@ import React, {
  *
  *
  */
-import Example from './apps/examples/main';
+import LifeAssistant from './apps/lifeAssistant/main';
 
 class Main extends Component {
   render(){
     return (
-        <Example />
+        <LifeAssistant />
     );
   }
 }

@@ -21,7 +21,7 @@ class Example extends Component {
     render(){
         return (
             <View style={{flex:1}}>
-                <Header />
+                <Header title="Example" />
                 <NavigatorComponent initialRoute={{name:'HomeFramePage',component:HomeFramePage}} />
             </View>
         );
