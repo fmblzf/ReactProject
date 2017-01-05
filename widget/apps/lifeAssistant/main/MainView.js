@@ -41,42 +41,10 @@ class MainView extends Component {
             <View style={{flex:1}}>
                 <Header title={this.state.title} onLeftAction={this._leftAction} />
                 <TabNavigator>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'news'}
-                        title="新闻"
-                        renderIcon={()=>this._getTabIcon('news',false)}
-                        renderSelectedIcon={()=>this._getTabIcon('news',true)}
-                        badgeText="1"
-                        onPress={() => this.setState({ selectedTab: 'news' ,title:'新闻'})}>
-                        {<NewsFrame />}
-                    </TabNavigator.Item>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'weather'}
-                        title="天气"
-                        renderIcon={()=>this._getTabIcon('weather',false)}
-                        renderSelectedIcon={()=>this._getTabIcon('weather',true)}
-                        renderBadge={() => <View />}
-                        onPress={() => this.setState({ selectedTab: 'weather' ,title:'天气'})}>
-                        {<WeatherFrame/>}
-                    </TabNavigator.Item>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'relax'}
-                        title="放松"
-                        renderIcon={()=>this._getTabIcon('relax',false)}
-                        renderSelectedIcon={()=>this._getTabIcon('relax',true)}
-                        renderBadge={() => <View />}
-                        onPress={() => this.setState({ selectedTab: 'relax' ,title:'放松'})}>
-                        {<RelaxFrame/>}
-                    </TabNavigator.Item>
-                    <TabNavigator.Item
-                        selected={this.state.selectedTab === 'func'}
-                        title="功能"
-                        renderIcon={()=>this._getTabIcon('func',false)}
-                        renderSelectedIcon={()=>this._getTabIcon('func',true)}
-                        renderBadge={() => <View />}
-                        onPress={() => this.setState({ selectedTab: 'func',title:'功能' })}>
-                        {<FuncFrame/>}
-                    </TabNavigator.Item>
+                    {this._getTabNavigatorItem('news','新闻',<NewsFrame/>)}
+                    {this._getTabNavigatorItem('weather','天气',<WeatherFrame/>)}
+                    {this._getTabNavigatorItem('relax','娱乐',<RelaxFrame/>)}
+                    {this._getTabNavigatorItem('func','功能',<FuncFrame/>)}
                 </TabNavigator>
             </View>
         )
@@ -91,6 +59,28 @@ class MainView extends Component {
             this.props.titleLeftAction();
         }
 
+    }
+    /**
+     * 获取TabNavigator的子组件
+     * @param type tab类型
+     * @param curtitle tabbar的标题
+     * @param component tabItem对应的子视图
+     * @param selectedTitle 选中时对应的标题栏标题
+     * @returns {XML}
+     * @private
+     */
+    _getTabNavigatorItem = (type,curtitle,component,selectedTitle)=>{
+        return (
+            <TabNavigator.Item
+                selected={this.state.selectedTab === type}
+                title={curtitle}
+                renderIcon={()=>this._getTabIcon(type,false)}
+                renderSelectedIcon={()=>this._getTabIcon(type,true)}
+                renderBadge={() => <View />}
+                onPress={() => this.setState({ selectedTab: type ,title:selectedTitle?selectedTitle:curtitle})}>
+                {component}
+            </TabNavigator.Item>
+        );
     }
     /**
      * 获取图标
