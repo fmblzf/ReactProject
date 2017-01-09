@@ -20,9 +20,9 @@ class CustomListView extends Component{
         super(props);
         var ds = new ListView.DataSource({rowHasChanged:(r1,r2)=>r1!==r2});
         this.state = {
-            ds,
+            dataSource:ds,
         }
-        this._data = [1,2,3,4,5,6];
+        this._data = [];
     }
 
     /**
@@ -37,11 +37,15 @@ class CustomListView extends Component{
      * @param newData
      * @private
      */
-    _onDataArrived = (newData)=>{
-        this._data.concat(newData);
-        console.log('ds=='+JSON.stringify(newData));
+    _onDataArrived(newData){
+        //this._data.concat(newData);
+        for(var i = 0;i<newData.length;i++){
+            this._data.push(newData[i]);
+        }
+        //console.log(newData);
+        //console.log('_data=='+JSON.stringify(this._data));
         this.setState({
-            ds:this.state.ds.cloneWithRows(this._data),
+            dataSource:this.state.dataSource.cloneWithRows(this._data),
         });
     }
     /**
@@ -70,7 +74,7 @@ class CustomListView extends Component{
     render(){
         return (
             <ListView
-                dataSource={this.state.ds}
+                dataSource={this.state.dataSource}
                 renderRow={(rowData) => this._getRowRenderComponent(rowData)}
                 enableEmptySections = {true}
             />
@@ -83,7 +87,7 @@ class CustomListView extends Component{
      * @returns {XML}
      * @private
      */
-    _getRowRenderComponent = (rowData)=>{
+    _getRowRenderComponent = (rowData)=>{                
         return <Text>测试</Text>
     }
 }
