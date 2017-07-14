@@ -1,59 +1,85 @@
 /**
- * 网络请求操作
+ * 网络请求操作类
  */
-import {HOST} from '../instant/Instant';
-
-export const request = (url='',body='',method='POST')=>{
-	return new Promise((resolve, reject)=>{
-		fetch(HOST+url,{
-			// method,
-			// // headers: {
-			// //    //'Accept': 'application/json',
-			// //    //'Content-Type': 'application/json',
-			// //    //'Content-Type': 'application/x-www-form-urlencoded',
-			// //    'Content-Type':'text/plain;charset=UTF-8'
-			// // },
-			// body
-		}).then((response)=>{
-			console.log(response)
-			return response.json();
-		}).then((responseJson)=>{
-			resolve(responseJson);
-		}).catch((error)=>{
-			console.log(error.message);
-			reject(error);
-		});
-	});
-}
-/**
- * 文件上传
- * url 接口路径
- * uri 文件路径
- * filename 文件名称
- */
-export const upload = (url,uri,filename)=>{
-	let formData = new FormData();
-	let file = {uri:uri,type:'multipart/form-data',name:filename};
-	formData.append('images',file);
-	return new Promise((resolve,reject)=>{
-		fetch(url,{
+class RequestUtils{
+	constructor(){
+	}
+	/**
+	 * 同步POST请求
+	 * @param  {[type]} url          服务器地址
+	 * @param  {[type]} requestParam 请求参数
+	 * @return {[type]}              返回请求结果
+	 */
+	static async postAwait(url,requestParam){
+		var config = {
 			method:'POST',
-			header:{
-				'Content-Type':'multipart/form-data',
-			},
-			body:formData,
-		})
-		.then((response)=>{
-			return response.text();
-		})
-		.then((responeData)=>{
-			console.log(responeData);
-			resolve(responeData)
-		})
-		.catch((error)=>{
-			console.warn('File upload Failed ',error);
-			reject(error)
-		});
-	});
-}
+			headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body:requestParam
+		};
+		try{			
+			let response = await fetch(url,config);
+			let postdata = await response.json();
+			return postdata;
+		}catch(e){
+			console.log(e)
+		}
+		return null;
+	} 
 
+	/**
+	 * 异步回调POST请求
+	 * @param  {[type]}   url          服务器地址
+	 * @param  {[type]}   requestParam 请求参数
+	 * @param  {Function} callback     回调函数
+	 */
+	static post(url,requestParam,callback = null,){
+		var config = {
+			method:'POST',
+			headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body:requestParam
+		};
+		fetch(url,config).then((response)=>{
+			if (typeof callback == 'function') {
+				callback(response.json());
+			}
+		}).catch((e)=>{
+			onsole.log(e);	
+		});
+	}
+	/**
+	 * 同步GET请求
+	 * @param  {[type]} url 服务器地址
+	 * @return {[type]}     请求数据
+	 */
+	static async getAwait(url){
+		try{			
+			let response = await fetch(url);
+			let postdata = await response.json();
+			return postdata;
+		}catch(e){
+			console.log(e)
+		}
+		return null;
+	}
+	/**
+	 * 异步回调GET请求
+	 * @param  {[type]}   url      服务器地址
+	 * @param  {Function} callback 回调函数
+	 */
+	static get(url,callback = null){
+		fetch(url).then((response)=>{
+			if (typeof callback == 'function') {
+				callback(response.json());
+			}
+		}).catch((e)=>{
+			onsole.log(e);	
+		});
+	}
+
+}
+//导出网络请求类
+module.exports = RequestUtils;

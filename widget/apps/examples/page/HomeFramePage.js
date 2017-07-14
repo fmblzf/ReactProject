@@ -13,6 +13,7 @@ import {
 } from 'react-native';
 
 import FuncFramePage from './FuncFramePage';
+import FlexboxFramePage from './FlexboxFramePage'
 //request,必须用{}扩起来
 import {request} from '../../../utils/RequestUtils';
 import Storage from '../../../utils/StorageUtils';
@@ -110,6 +111,20 @@ class HomeFramePage extends Component{
 						borderRadius:20,
 					}} >
 					<Text>调用自定义插件</Text>
+				</TouchableHighlight>	
+				<TouchableHighlight
+					onPress={this.openFlexbox.bind(this)}
+					underlayColor='#CEF0FA'
+					style={{
+						backgroundColor:'#7BDBF7',
+						width:100,
+						height:40,
+						justifyContent:'center',
+						alignItems:'center',
+						marginTop:20,
+						borderRadius:20,
+					}} >
+					<Text>Flex布局</Text>
 				</TouchableHighlight>				
 			</View>
 		);
@@ -156,6 +171,22 @@ class HomeFramePage extends Component{
 			console.log(JSON.stringify(responseJson));
 			alert(responseJson.total);
 		})
+	}
+	/**
+	 * 打开Flex布局界面
+	 * @return {[type]} [description]
+	 */
+	openFlexbox = ()=>{
+		const {navigator} = this.props;
+		if (navigator) {
+			navigator.push({
+				name:'FlexboxFramePage',
+				component:FlexboxFramePage,
+				params:{
+					test:'test'
+				}
+			});
+		}
 	}
 	/**
 	 * 点击事件

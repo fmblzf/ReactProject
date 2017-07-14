@@ -6,6 +6,7 @@ import {
     View,
     Text,
     ListView,
+    Image,
 } from 'react-native';
 
 /**
@@ -14,6 +15,9 @@ import {
 class CustomListView extends Component{
     static propTypes = {
         type:PropTypes.string,
+        rowComponent:PropTypes.func,
+        fetchMethod:PropTypes.func,
+        isasync:PropTypes.bool,
     }
 
     constructor(props){
@@ -29,6 +33,23 @@ class CustomListView extends Component{
      * 当前组件挂载完成之后执行的方法
      */
     componentDidMount(){
+        if (typeof this.props.fetchMethod == 'function') {
+            if (this.props.isasync) {
+                //表示同步操作                
+                var fetchData = this.props.fetchMethod();
+                this._onDataArrived(fetchData);
+            }else{
+                //表示异步操作，
+                //回调方法中this作用域发生变化，所以设置对应的变量
+                var that = this;
+                this.props.fetchMethod().then((data)=>{
+                    that._onDataArrived(data);
+                }).catch((e)=>{
+                    console.log(e)
+                })
+            }
+            return ;
+        }
         this._getWebData();
     }
 
@@ -87,8 +108,24 @@ class CustomListView extends Component{
      * @returns {XML}
      * @private
      */
-    _getRowRenderComponent = (rowData)=>{                
-        return <Text>测试</Text>
+    _getRowRenderComponent = (rowData)=>{
+        if (typeof this.props.rowComponent == 'function') {
+            return this.props.rowComponent(rowData);
+        }                
+        return (
+            <View style={{flexDirection:'row',flex:1,height:80,padding:10}}>
+                    <Image source={{uri:rowData.thumbnail_pic_s}} style={{width:60,height:60,borderRadius:5}}></Image>
+                    <View style={{paddingLeft:10}} >
+                        <Text style={{fontSize:12,color:'#000',paddingTop:5}} >{rowData.title.length>16?(rowData.title.substring(0,16)+"..."):rowData.title}</Text>
+                        <View style={{flexDirection:'row',paddingTop:5}}>
+                        <Text style={{fontSize:10}} >来源：</Text><Text style={{fontSize:10}}>{rowData.author_name}</Text>
+                        </View>
+                        <View style={{flexDirection:'row',paddingTop:5}}>
+                        <Text style={{fontSize:10}}>时间：</Text><Text style={{fontSize:10}}>{rowData.date}</Text>
+                        </View>                     
+                    </View>
+                </View>
+        );
     }
 }
 

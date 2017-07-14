@@ -41,6 +41,7 @@ class Header extends Component{
 				<StatusBar 
 					translucent={false}
 					backgroundColor='#2578FB'
+					hidden={false}
 				 />	
 				<View style={{flex:1,alignItems:'flex-start',}}>
 					<TouchableOpacity

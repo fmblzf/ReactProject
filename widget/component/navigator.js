@@ -33,7 +33,7 @@ class NavigatorComponent extends Component{
 	 */
 	configureScene = (route,routeStack)=>{
 		if (route.type == 'Bottom') {
-			//地步弹出
+			//底部弹出
 			return Navigator.SceneConfigs.FloatFromBottom;
 		}else{
 			//右侧弹出
