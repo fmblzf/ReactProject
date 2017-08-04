@@ -17,7 +17,6 @@ class CustomListView extends Component{
         type:PropTypes.string,
         rowComponent:PropTypes.func,
         fetchMethod:PropTypes.func,
-        isasync:PropTypes.bool,
     }
 
     constructor(props){
@@ -34,20 +33,12 @@ class CustomListView extends Component{
      */
     componentDidMount(){
         if (typeof this.props.fetchMethod == 'function') {
-            if (this.props.isasync) {
-                //表示同步操作                
-                var fetchData = this.props.fetchMethod();
-                this._onDataArrived(fetchData);
-            }else{
-                //表示异步操作，
-                //回调方法中this作用域发生变化，所以设置对应的变量
-                var that = this;
-                this.props.fetchMethod().then((data)=>{
-                    that._onDataArrived(data);
-                }).catch((e)=>{
-                    console.log(e)
-                })
-            }
+            var that = this;
+            this.props.fetchMethod().then((data)=>{
+                that._onDataArrived(data);
+            }).catch((e)=>{
+                console.log(e);
+            })
             return ;
         }
         this._getWebData();
